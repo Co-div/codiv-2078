@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:animated_text_kit/animated_text_kit.dart';
-
 import 'package:flutter/widgets.dart';
 
 void main() {
@@ -9,7 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,13 +30,18 @@ class MyApp extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: Padding(
                 padding: const EdgeInsets.all(18.0),
-                child: TyperAnimatedTextKit(
-                  text: ['Codiv', '2076', '2077', '2078'],
-                  textStyle: TextStyle(fontSize: 30.0, fontFamily: "Agne"),
+                child: TypewriterAnimatedTextKit(
+                  text: ['Codiv 2078'],
+                  
+                  // totalRepeatCount: 1,
+                  speed: Duration(milliseconds: 500),
+                  
+                  textStyle: TextStyle(fontSize: 30.0, fontFamily: 'Orbitron-bold',),
                   textAlign: TextAlign.start,
                 ),
               ),
             ),
+            
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
@@ -59,13 +62,29 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
-                CircleAvatar(
-                  radius: 30,
-//              backgroundColor: Colors.green,
-                  child: Icon(Icons.shopping_cart),
-                )
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: Container(
+                    child: Icon(
+                      Icons.shopping_cart,
+                      size: 35.0,
+                    ),
+                    height: 75.0,
+                    width: 75.0,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blue,
+                            blurRadius: 5.0,
+                            spreadRadius: 7.0,
+                          ),
+                        ]),
+                  ),
+                ),
               ],
             ),
           ],
