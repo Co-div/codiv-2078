@@ -20,7 +20,13 @@ class MyApp extends StatelessWidget {
         ),
         body: Stack(
           children: <Widget>[
-            Image.asset('asset/sf.gif'),
+            Container(
+              color: Colors.black,
+            ),
+            Image(
+              image: AssetImage('assets/sf2.gif'),
+              height: 1000000000,
+            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
