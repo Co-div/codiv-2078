@@ -18,33 +18,38 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('something'),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+        body: Stack(
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Image.asset('asset/sf.gif'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Transform.rotate(
-                  angle: -30 * pi / 180,
-                  child: FlatButton(
-                    onPressed: () {},
-                    color: Colors.green,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Image(
+                      image: AssetImage('assets/1.png'),
+                      height: 150,
+                    ),
+                    Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationY(pi),
+                        child: Image(
+                          image: AssetImage('assets/1.png'),
+                          height: 150,
+                        ))
+                  ],
                 ),
-                Transform.rotate(
-                  angle: 30 * pi / 180,
-                  child: FlatButton(
-                    onPressed: () {},
-                    color: Colors.green,
-                  ),
+                SizedBox(
+                  height: 20,
+                ),
+                CircleAvatar(
+                  radius: 30,
+//              backgroundColor: Colors.green,
+                  child: Icon(Icons.shopping_cart),
                 )
               ],
             ),
-            CircleAvatar(
-              radius: 30,
-//              backgroundColor: Colors.green,
-              child: Icon(Icons.shopping_cart),
-            )
           ],
         ),
       ),
