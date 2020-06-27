@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 import 'package:flutter/widgets.dart';
 
@@ -25,7 +26,18 @@ class MyApp extends StatelessWidget {
             ),
             Image(
               image: AssetImage('assets/sf2.gif'),
-              height: 1000000000,
+              height: double.infinity,
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: TyperAnimatedTextKit(
+                  text: ['Codiv', '2076', '2077', '2078'],
+                  textStyle: TextStyle(fontSize: 30.0, fontFamily: "Agne"),
+                  textAlign: TextAlign.start,
+                ),
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.end,
