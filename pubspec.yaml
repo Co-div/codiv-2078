@@ -32,12 +32,9 @@ dependencies:
   firebase_ml_vision: ^0.9.4
   firebase_auth: ^0.16.1
   image_picker: ^0.6.7+2
-<<<<<<< HEAD
+
   camera: ^0.5.8+2
 
-=======
-  
->>>>>>> de893f0c7518f9e630207a39cc900247f3bb05d7
 
 
 dev_dependencies:
