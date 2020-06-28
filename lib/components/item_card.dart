@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:codiv_2078/screens/item_page.dart';
+import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
   ItemCard({this.image, this.title, this.coins, this.right = false, this.desc});
@@ -37,10 +37,13 @@ class ItemCard extends StatelessWidget {
               stops: _stops,
             )),
         width: 175.0,
+        //height: 350.0,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            Container(
+              padding: EdgeInsets.all(8),
+              height: 175,
               child: Image(
                 image: AssetImage(image),
               ),

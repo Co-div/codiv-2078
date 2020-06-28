@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:codiv_2078/components/item_card.dart';
+import 'package:flutter/material.dart';
 
 class StorePage extends StatelessWidget {
   static const String id = 'store-page';
@@ -19,15 +19,18 @@ class StorePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 ItemCard(
-                  title: 'Helmet',
+                  title: 'Spiked Helmet',
                   image: 'assets/Shop1.jpg',
                   coins: 2500,
-                  desc: 'random',
+                  desc:
+                      'Gotta instill fear in your enemies then go for this spiky helm, with a built-in HUD display and night vision. Your enemies will surely remember your name.',
                 ),
                 ItemCard(
-                  title: 'title',
-                  image: 'assets/Shop1.jpg',
-                  coins: 2500,
+                  title: 'Shadow Helmet',
+                  image: 'assets/shop2.jpg',
+                  coins: 3500,
+                  desc:
+                      'Become a master of stealth by putting on this helm that lets you go off the radar and be invisible using the best cloaking tech. ',
                   right: true,
                 ),
               ],
@@ -39,14 +42,18 @@ class StorePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 ItemCard(
-                  title: 'title',
-                  image: 'assets/Shop1.jpg',
-                  coins: 2500,
+                  title: 'Raider Helmet',
+                  image: 'assets/shop3.jpg',
+                  coins: 3000,
+                  desc:
+                      'Let us go on a raid riding our bikes under the neon city lights showing everyone who is the boss around here.',
                 ),
                 ItemCard(
-                  title: 'title',
-                  image: 'assets/Shop1.jpg',
-                  coins: 2500,
+                  title: 'Stun-Shock',
+                  image: 'assets/shopgun.jpg',
+                  coins: 5000,
+                  desc:
+                      'Comes with Aim-Assist that links with your HUD display so you never miss your aim. It is time to rain down thunder.',
                   right: true,
                 ),
               ],
@@ -58,14 +65,18 @@ class StorePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 ItemCard(
-                  title: 'title',
-                  image: 'assets/Shop1.jpg',
-                  coins: 2500,
+                  title: 'Raider 9000',
+                  image: 'assets/shopbike.jpg',
+                  coins: 10000,
+                  desc:
+                      'Need a ride to go crusing around then this baby right here is the best choice with them curves leting you reach speeds you have never before.',
                 ),
                 ItemCard(
-                  title: 'title',
-                  image: 'assets/Shop1.jpg',
-                  coins: 2500,
+                  title: 'Hover-Tron',
+                  image: 'assets/shopcar.jpg',
+                  coins: 18000,
+                  desc:
+                      'Off road will never be the same as before, because in the sky there are no roads. So let go of your limits and hit the pedal.',
                   right: true,
                 ),
               ],
