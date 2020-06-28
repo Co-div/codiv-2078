@@ -47,7 +47,7 @@ class LandingScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ObjectDetection()));
+                          builder: (context) => HomeScreen()));
                 },
                 rightFunction: () {
                   print('right pressed');
