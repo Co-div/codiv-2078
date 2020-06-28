@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:codiv_2078/components/side_buttons.dart';
 
+import 'store_page.dart';
+
 class LandingScreen extends StatelessWidget {
+  static const String id = 'landing-screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +59,7 @@ class LandingScreen extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     print('shopping cart pressed');
+                    Navigator.pushNamed(context, StorePage.id);
                   },
                   child: Container(
                     child: Icon(
