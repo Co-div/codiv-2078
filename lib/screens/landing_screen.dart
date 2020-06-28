@@ -63,20 +63,27 @@ class LandingScreen extends StatelessWidget {
                             },
 
                             imageMask: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                SideButtons(
-                                  height: 150,
-                                  leftFunction: () {
-                                    print('left pressed');
-                                  },
-                                  rightFunction: () {
-                                    print('right pressed');
-                                  },
+                                Image(
+                                  image: AssetImage('assets/hud2.png'),
                                 ),
-                                SizedBox(
-                                  height: 15,
+                                Image(
+                                  image: AssetImage('assets/hud1.png'),
+                                  height: 250,
                                 ),
+//                                SideButtons(
+//                                  height: 150,
+//                                  leftFunction: () {
+//                                    print('left pressed');
+//                                  },
+//                                  rightFunction: () {
+//                                    print('right pressed');
+//                                  },
+//                                ),
+//                                SizedBox(
+//                                  height: 15,
+//                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 20.0),
                                   child: GestureDetector(
