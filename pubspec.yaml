@@ -32,6 +32,8 @@ dependencies:
   firebase_ml_vision: ^0.9.4
   firebase_auth: ^0.16.1
   camera: ^0.5.8+2
+  path_provider: ^1.6.11
+  video_player: ^0.10.11+1
 
 
 
