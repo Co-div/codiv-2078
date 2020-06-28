@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:codiv_2078/screens/item_page.dart';
 
 class ItemCard extends StatelessWidget {
-  ItemCard({this.image, this.title, this.coins, this.right = false});
+  ItemCard({this.image, this.title, this.coins, this.right = false, this.desc});
   final String image;
   final String title;
   final int coins;
   final bool right;
+  final String desc;
   final List<Color> _colorsLeft = [Color(0xFF7A04EB), Color(0xFFFE75FE)];
   final List<Color> _colorsRight = [Color(0xFFFE75FE), Color(0xFF7A04EB)];
 
@@ -24,6 +25,7 @@ class ItemCard extends StatelessWidget {
                       image: image,
                       title: title,
                       coins: coins,
+                      desc: desc,
                     )));
       },
       child: Container(

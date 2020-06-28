@@ -22,6 +22,7 @@ class StorePage extends StatelessWidget {
                   title: 'Helmet',
                   image: 'assets/Shop1.jpg',
                   coins: 2500,
+                  desc: 'random',
                 ),
                 ItemCard(
                   title: 'title',

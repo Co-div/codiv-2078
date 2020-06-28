@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 class ItemPage extends StatelessWidget {
   static const String id = 'item-page';
-  ItemPage({this.image, this.title, this.coins});
+  ItemPage({this.image, this.title, this.coins, this.desc});
   final String image;
   final String title;
   final int coins;
+  final String desc;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -106,8 +107,7 @@ class ItemPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10.0),
-              Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sodales neque sodales ut etiam. Consectetur libero id faucibus nisl. Facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat. Quisque egestas diam in arcu cursus euismod quis viverra nibh. Penatibus et magnis dis parturient montes nascetur ridiculus mus. Facilisi etiam dignissim diam quis enim. Ut placerat orci nulla pellentesque dignissim. Congue eu consequat ac felis. Mauris a diam maecenas sed enim ut sem. In cursus turpis massa tincidunt dui ut. Enim eu turpis egestas pretium aenean pharetra magna ac. Rhoncus mattis rhoncus urna neque viverra. Quis hendrerit dolor magna eget est. Faucibus in ornare quam viverra orci. Ultrices in iaculis nunc sed. Massa enim nec dui nunc mattis enim ut tellus. Lacus suspendisse faucibus interdum posuere lorem.')
+              Text(desc)
             ],
           ),
         ),
