@@ -1,7 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:codiv_2078/components/side_buttons.dart';
 import 'object_detection.dart';
+import 'package:camera_camera/camera_camera.dart';
+
+File val;
 
 class LandingScreen extends StatelessWidget {
   @override
@@ -42,13 +47,79 @@ class LandingScreen extends StatelessWidget {
             children: <Widget>[
               SideButtons(
                 height: 150,
-                leftFunction: () {
-                  print('left pressed');
+                leftFunction: () async {
+                  val = await showDialog(
+                      context: context,
+                      builder: (context) => Camera(
+                            mode: CameraMode.fullscreen,
+                            //initialCamera: CameraSide.front,
+                            enableCameraChange: false,
+                            orientationEnablePhoto: CameraOrientation.portrait,
+                            //  orientationEnablePhoto: CameraOrientation.landscape,
+                            onChangeCamera: (direction, _) {
+                              print('--------------');
+                              print('$direction');
+                              print('--------------');
+                            },
+
+                            imageMask: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: <Widget>[
+                                SideButtons(
+                                  height: 150,
+                                  leftFunction: () {
+                                    print('left pressed');
+                                  },
+                                  rightFunction: () {
+                                    print('right pressed');
+                                  },
+                                ),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 20.0),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      print('shopping cart pressed');
+                                    },
+                                    child: Container(
+//                                      child: Icon(
+//                                        Icons.shopping_cart,
+//                                        size: 35.0,
+//                                      ),
+                                      height: 50.0,
+                                      width: 50.0,
+                                      decoration: BoxDecoration(
+                                          color: Colors.black,
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Colors.blue,
+                                              blurRadius: 5.0,
+                                              spreadRadius: 7.0,
+                                            ),
+                                          ]),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ));
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => HomeScreen()));
+                          builder: (context) => ObjectDetection(
+                                file: val,
+                              )));
                 },
+//                leftFunction: () {
+//                  print('left pressed');
+//                  Navigator.push(
+//                      context,
+//                      MaterialPageRoute(
+//                          builder: (context) => HomeScreen()));
+//                },
                 rightFunction: () {
                   print('right pressed');
                 },
