@@ -1,42 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:codiv_2078/components/side_buttons.dart';
-import 'object_detection.dart';
+import 'dart:io';
+import 'package:camera/camera.dart';
 
-class LandingScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+//import 'package:image_picker/image_picker.dart';
+import 'package:codiv_2078/components/side_buttons.dart';
+
+class ObjectDetection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    main();
     return Scaffold(
-      appBar: AppBar(
-        title: Text('something'),
-      ),
       body: Stack(
         children: <Widget>[
-          Container(
-            color: Colors.black,
-          ),
-          Image(
-            image: AssetImage('assets/sf2.gif'),
-            height: double.infinity,
-          ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: TypewriterAnimatedTextKit(
-                text: ['Codiv 2078'],
-
-                // totalRepeatCount: 1,
-                speed: Duration(milliseconds: 500),
-
-                textStyle: TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Orbitron-bold',
-                ),
-                textAlign: TextAlign.start,
-              ),
-            ),
-          ),
+          CameraApp(),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
@@ -44,10 +20,6 @@ class LandingScreen extends StatelessWidget {
                 height: 150,
                 leftFunction: () {
                   print('left pressed');
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ObjectDetection()));
                 },
                 rightFunction: () {
                   print('right pressed');
@@ -60,11 +32,11 @@ class LandingScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 20.0),
                 child: GestureDetector(
                   onTap: () {
-                    print('shopping cart pressed');
+                    print('capture pressed');
                   },
                   child: Container(
                     child: Icon(
-                      Icons.shopping_cart,
+                      Icons.add_a_photo,
                       size: 35.0,
                     ),
                     height: 75.0,
@@ -87,5 +59,49 @@ class LandingScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+List<CameraDescription> cameras;
+
+Future<void> main() async {
+  cameras = await availableCameras();
+//  runApp(CameraApp());
+}
+
+class CameraApp extends StatefulWidget {
+  @override
+  _CameraAppState createState() => _CameraAppState();
+}
+
+class _CameraAppState extends State<CameraApp> {
+  CameraController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = CameraController(cameras[0], ResolutionPreset.medium);
+    controller.initialize().then((_) {
+      if (!mounted) {
+        return;
+      }
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    controller?.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (!controller.value.isInitialized) {
+      return Container();
+    }
+    return AspectRatio(
+        aspectRatio: controller.value.aspectRatio,
+        child: CameraPreview(controller));
   }
 }
