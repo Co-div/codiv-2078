@@ -7,9 +7,10 @@ class StorePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         title: Text('Store'),
-
       ),
+      backgroundColor: Colors.black,
       body: ListView(
         children: <Widget>[
           Padding(
@@ -17,8 +18,17 @@ class StorePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                ItemCard(title: 'title', image: 'assets/Shop1.jpg', coins: 2500,),
-                ItemCard(title: 'title', image: 'assets/Shop1.jpg', coins: 2500,),
+                ItemCard(
+                  title: 'Helmet',
+                  image: 'assets/Shop1.jpg',
+                  coins: 2500,
+                ),
+                ItemCard(
+                  title: 'title',
+                  image: 'assets/Shop1.jpg',
+                  coins: 2500,
+                  right: true,
+                ),
               ],
             ),
           ),
@@ -27,8 +37,17 @@ class StorePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                ItemCard(title: 'title', image: 'assets/Shop1.jpg', coins: 2500,),
-                ItemCard(title: 'title', image: 'assets/Shop1.jpg', coins: 2500,),
+                ItemCard(
+                  title: 'title',
+                  image: 'assets/Shop1.jpg',
+                  coins: 2500,
+                ),
+                ItemCard(
+                  title: 'title',
+                  image: 'assets/Shop1.jpg',
+                  coins: 2500,
+                  right: true,
+                ),
               ],
             ),
           ),
@@ -37,8 +56,17 @@ class StorePage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                ItemCard(title: 'title', image: 'assets/Shop1.jpg', coins: 2500,),
-                ItemCard(title: 'title', image: 'assets/Shop1.jpg', coins: 2500,),
+                ItemCard(
+                  title: 'title',
+                  image: 'assets/Shop1.jpg',
+                  coins: 2500,
+                ),
+                ItemCard(
+                  title: 'title',
+                  image: 'assets/Shop1.jpg',
+                  coins: 2500,
+                  right: true,
+                ),
               ],
             ),
           ),

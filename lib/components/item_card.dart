@@ -2,73 +2,106 @@ import 'package:flutter/material.dart';
 import 'package:codiv_2078/screens/item_page.dart';
 
 class ItemCard extends StatelessWidget {
-  ItemCard({this.image, this.title, this.coins});
+  ItemCard({this.image, this.title, this.coins, this.right = false});
   final String image;
   final String title;
   final int coins;
+  final bool right;
+  final List<Color> _colorsLeft = [Color(0xFF7A04EB), Color(0xFFFE75FE)];
+  final List<Color> _colorsRight = [Color(0xFFFE75FE), Color(0xFF7A04EB)];
+
+  List<double> _stops = [0.0, 1];
+//  List<double> _stopsRight = [0.7, 0.0];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        color: Colors.blue,
-      ),
-      width: 175.0,
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image(
-              image: AssetImage(image),
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            title,
-            style: TextStyle(fontSize: 35.0),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          Text(
-            coins.toString(),
-            style: TextStyle(
-              fontSize: 20.0,
-            ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ItemPage(
-                            image: image,
-                            title: title,
-                            coins: coins,
-                          )));
-            },
-            child: Container(
-              color: Colors.green,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'Buy',
-                  style: TextStyle(
-                    fontSize: 25.0,
-                  ),
-                ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ItemPage(
+                      image: image,
+                      title: title,
+                      coins: coins,
+                    )));
+      },
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10.0)),
+//          color: Colors.blue,
+            gradient: LinearGradient(
+              colors: right ? _colorsRight : _colorsLeft,
+              stops: _stops,
+            )),
+        width: 175.0,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image(
+                image: AssetImage(image),
               ),
             ),
-          ),
-          SizedBox(
-            height: 10.0,
-          ),
-        ],
+            SizedBox(
+              height: 10.0,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                  fontSize: 35.0,
+                  color: Colors.yellowAccent,
+                  fontFamily: "Orbitron-semibold"),
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/Currency.jpg'),
+                  height: 20,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  coins.toString(),
+                  style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+                      fontSize: 20.0,
+                      fontFamily: "Orbitron-bold",
+                      fontStyle: FontStyle.italic),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+//          GestureDetector(
+//            onTap: () {
+//
+//            },
+//            child: Container(
+//              color: Colors.green,
+//              child: Padding(
+//                padding: const EdgeInsets.all(8.0),
+//                child: Text(
+//                  'Buy',
+//                  style: TextStyle(
+//                    fontSize: 25.0,
+//                  ),
+//                ),
+//              ),
+//            ),
+//          ),
+            SizedBox(
+              height: 10.0,
+            ),
+          ],
+        ),
       ),
     );
   }
