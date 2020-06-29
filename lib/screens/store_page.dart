@@ -1,14 +1,54 @@
 import 'package:codiv_2078/components/item_card.dart';
+import 'package:codiv_2078/components/parts.dart';
 import 'package:flutter/material.dart';
 
-class StorePage extends StatelessWidget {
+class StorePage extends StatefulWidget {
   static const String id = 'store-page';
+
+  @override
+  _StorePageState createState() => _StorePageState();
+}
+
+class _StorePageState extends State<StorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Store'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              'Store',
+              style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+                  fontSize: 30.0,
+                  fontFamily: "Orbitron-bold",
+                  fontStyle: FontStyle.italic),
+            ),
+            Row(
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/Currency.jpg'),
+                  height: 20,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  getMoney().toString(),
+                  style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+                      fontSize: 25.0,
+                      fontFamily: "Orbitron-bold",
+                      fontStyle: FontStyle.italic),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
       backgroundColor: Colors.black,
       body: ListView(
@@ -19,14 +59,14 @@ class StorePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 ItemCard(
-                  title: 'Spiked Helmet',
+                  title: 'Spiked' "\n" 'Helmet',
                   image: 'assets/Shop1.jpg',
                   coins: 2500,
                   desc:
                       'Gotta instill fear in your enemies then go for this spiky helm, with a built-in HUD display and night vision. Your enemies will surely remember your name.',
                 ),
                 ItemCard(
-                  title: 'Shadow Helmet',
+                  title: 'Shadow' "\n" 'Helmet',
                   image: 'assets/shop2.jpg',
                   coins: 3500,
                   desc:
@@ -42,14 +82,14 @@ class StorePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 ItemCard(
-                  title: 'Raider Helmet',
+                  title: 'Raider' "\n" ' Helmet',
                   image: 'assets/shop3.jpg',
                   coins: 3000,
                   desc:
                       'Let us go on a raid riding our bikes under the neon city lights showing everyone who is the boss around here.',
                 ),
                 ItemCard(
-                  title: 'Stun-Shock',
+                  title: 'Stun' "\n" 'Shock',
                   image: 'assets/shopgun.jpg',
                   coins: 5000,
                   desc:
@@ -65,14 +105,14 @@ class StorePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 ItemCard(
-                  title: 'Raider 9000',
+                  title: 'Raider' "\n" ' 9000',
                   image: 'assets/shopbike.jpg',
                   coins: 10000,
                   desc:
                       'Need a ride to go crusing around then this baby right here is the best choice with them curves leting you reach speeds you have never before.',
                 ),
                 ItemCard(
-                  title: 'Hover-Tron',
+                  title: 'Hover' "\n" 'Tron',
                   image: 'assets/shopcar.jpg',
                   coins: 18000,
                   desc:
