@@ -1,5 +1,6 @@
 import 'package:codiv_2078/screens/item_page.dart';
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 class ItemCard extends StatelessWidget {
   ItemCard({this.image, this.title, this.coins, this.right = false, this.desc});
@@ -51,12 +52,14 @@ class ItemCard extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            Text(
-              title,
-              style: TextStyle(
-                  fontSize: 35.0,
-                  color: Colors.yellowAccent,
-                  fontFamily: "Orbitron-semibold"),
+            Center(
+              child: Text(
+                title,
+                style: TextStyle(
+                    fontSize: 35.0,
+                    color: Colors.yellowAccent,
+                    fontFamily: "Orbitron-semibold"),
+              ),
             ),
             SizedBox(
               height: 10.0,
