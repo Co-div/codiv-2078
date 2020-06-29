@@ -113,12 +113,14 @@ class LandingScreen extends StatelessWidget {
                               ],
                             ),
                           ));
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ObjectDetection(
-                                file: val,
-                              )));
+                  if (val != null) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ObjectDetection(
+                                  file: val,
+                                )));
+                  }
                 },
 //                leftFunction: () {
 //                  print('left pressed');
