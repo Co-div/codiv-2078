@@ -21,8 +21,6 @@ class _StorePageState extends State<StorePage> {
             Text(
               'Store',
               style: TextStyle(
-//                      color: Colors.black,
-//                      backgroundColor: Colors.,
                   fontSize: 30.0,
                   fontFamily: "Orbitron-bold",
                   fontStyle: FontStyle.italic),
@@ -39,8 +37,6 @@ class _StorePageState extends State<StorePage> {
                 Text(
                   getMoney().toString(),
                   style: TextStyle(
-//                      color: Colors.black,
-//                      backgroundColor: Colors.,
                       fontSize: 25.0,
                       fontFamily: "Orbitron-bold",
                       fontStyle: FontStyle.italic),

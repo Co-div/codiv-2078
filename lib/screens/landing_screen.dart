@@ -1,15 +1,12 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:codiv_2078/components/side_buttons.dart';
 import 'object_detection.dart';
 import 'package:camera_camera/camera_camera.dart';
-
-File val;
-
 import 'store_page.dart';
 
+File val;
 class LandingScreen extends StatelessWidget {
   static const String id = 'landing-screen';
   @override

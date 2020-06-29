@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:firebase_ml_vision/firebase_ml_vision.dart';
+// import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:flutter/material.dart';
 import 'package:codiv_2078/constants.dart';
 
@@ -9,30 +9,22 @@ class ObjectDetection extends StatelessWidget {
   });
   final File file;
 
-  void getImageLabels() async {
-    print('got here 1');
-    final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(file);
-    final ImageLabeler labeler = FirebaseVision.instance.cloudImageLabeler(
-//      ImageLabelerOptions(confidenceThreshold: 0.75),
-        );
-    final List<ImageLabel> labels = await labeler.processImage(visionImage);
-
-//    for (ImageLabel label in labels) {
-////      final String text = label.text;
-////      final String entityId = label.entityId;
-////      final double confidence = label.confidence;
-//
-//    }
-    print(labels[0].text);
-    print(labels[0].entityId);
-    print(labels[0].confidence);
-    print('got here');
-  }
+  // void getImageLabels() async {
+  //   print('got here 1');
+  //   final FirebaseVisionImage visionImage = FirebaseVisionImage.fromFile(file);
+  //   final ImageLabeler labeler = FirebaseVision.instance.cloudImageLabeler(
+  //       );
+  //   final List<ImageLabel> labels = await labeler.processImage(visionImage);
+  //   print(labels[0].text);
+  //   print(labels[0].entityId);
+  //   print(labels[0].confidence);
+  //   print('got here');
+  // }
 
   @override
   Widget build(BuildContext context) {
     print('atleast got here1');
-    getImageLabels();
+    // getImageLabels();
     print('atleast got here3');
 
     return Container(
@@ -55,10 +47,8 @@ class ObjectDetection extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 5.0),
                       child: Container(
                         padding: EdgeInsets.all(8),
-                        child: Text(
-                          'Detected a Smartphone',
-                          style: kImageTextStyle
-                        ),
+                        child: Text('Detected a Smartphone',
+                            style: kImageTextStyle),
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Color(0xFFFF2A6D),
@@ -80,6 +70,46 @@ class ObjectDetection extends StatelessWidget {
                         child: Text(
                           'Holocube uses state-of-the-art technology. Now you can carry your workstation everywhere using this tiny powerhouse combining extreme computing capabilities and a holographic system.',
                           style: kImageTextStyle,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0xFFFF2A6D),
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                              bottomRight: Radius.circular(30)),
+                          // color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                          'You Got',
+                          style: kImageTextStyle,
+                        ),
+                        SizedBox(width: 15),
+                            Image(
+                              image: AssetImage('assets/Currency.jpg'),
+                              height: 20,
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              '2500',
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontFamily: "Orbitron-bold",
+                                  fontStyle: FontStyle.italic),
+                            ),
+                          ],
                         ),
                         decoration: BoxDecoration(
                           border: Border.all(
