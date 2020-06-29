@@ -53,10 +53,12 @@ class _ItemPageState extends State<ItemPage> {
           padding: const EdgeInsets.all(18.0),
           child: Column(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Image(
-                  image: AssetImage(widget.image),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: Image(
+                    image: AssetImage(widget.image),
+                  ),
                 ),
               ),
               Column(
@@ -70,7 +72,7 @@ class _ItemPageState extends State<ItemPage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(widget.title,
                           style: TextStyle(
-                            fontSize: 30.0,
+                            fontSize: 25.0,
                             fontFamily: "Orbitron-bold",
                           )),
                     ),
@@ -126,9 +128,9 @@ class _ItemPageState extends State<ItemPage> {
                                 context: context,
                                 style: alertStyle,
                                 type: AlertType.success,
-                                title: "RFLUTTER ALERT",
+                                title: "Purchase Successful",
                                 desc:
-                                    "Flutter is more awesome with RFlutter Alert.",
+                                    "You got this Awesome Item, your stats might be on the rooftop",
                                 buttons: [
                                   DialogButton(
                                     child: Text(
@@ -142,7 +144,7 @@ class _ItemPageState extends State<ItemPage> {
                                       Navigator.popUntil(
                                           context,
                                           ModalRoute.withName(
-                                              Navigator.defaultRouteName));
+                                              "landing-screen"));
                                     },
                                     width: 120,
                                   )
