@@ -10,7 +10,17 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('something'),
+        backgroundColor: Colors.black,
+        title: Center(
+            child: Text(
+          'Welcome User',
+          style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+              fontSize: 30.0,
+              fontFamily: "Orbitron-bold",
+              fontStyle: FontStyle.italic),
+        )),
       ),
       body: Stack(
         children: <Widget>[
