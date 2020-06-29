@@ -48,7 +48,6 @@ class ObjectDetection extends StatelessWidget {
                       child: Image.file(
                         file,
                         fit: BoxFit.fill,
-                        // width: double.infinity
                       ),
                     ),
                     SizedBox(height: 20.0),
@@ -111,7 +110,7 @@ class ObjectDetection extends StatelessWidget {
                 ),
               ),
             )
-          : Text("Tire a foto"),
+          : Text("Take a picture."),
     );
   }
 }
