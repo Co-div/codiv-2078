@@ -1,3 +1,5 @@
+import 'package:codiv_2078/screens/arcore.dart';
+import 'package:codiv_2078/screens/arcore2.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:codiv_2078/components/side_buttons.dart';
@@ -46,9 +48,11 @@ class LandingScreen extends StatelessWidget {
                 height: 150,
                 leftFunction: () {
                   print('left pressed');
+                  Navigator.pushNamed(context, HelloWorld.id);
                 },
                 rightFunction: () {
                   print('right pressed');
+                  Navigator.pushNamed(context, RemoteObject.id);
                 },
               ),
               SizedBox(
