@@ -16,8 +16,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-//          .copyWith(primaryColor: Colors.purple, backgroundColor: Colors.black),
-      // home: LandingScreen(),
       initialRoute: LandingScreen.id,
       routes: {
         LandingScreen.id: (context) => LandingScreen(),

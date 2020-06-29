@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "892990519765",
+    "firebase_url": "https://codiv2078.firebaseio.com",
+    "project_id": "codiv2078",
+    "storage_bucket": "codiv2078.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892990519765:android:afca6c6b7cd804467ea55c",
+        "android_client_info": {
+          "package_name": "codiv.com.codiv_2078"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "892990519765-jki0lr8b8lfkala5onsbfaqreg1l4p22.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "codiv.com.codiv_2078",
+            "certificate_hash": "29f64c64815162b05262b0e2a8b3bcf227940fe7"
+          }
+        },
+        {
+          "client_id": "892990519765-9a7dbjfug45pdtffk0pn1e0ep71uhms8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaff_L12HHZyu7kSOSqER_iNkrU_IMHmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "892990519765-9a7dbjfug45pdtffk0pn1e0ep71uhms8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

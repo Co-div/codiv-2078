@@ -31,6 +31,12 @@ dependencies:
   animated_text_kit: ^2.2.0
   arcore_flutter_plugin: ^0.0.5+1
   rflutter_alert: ^1.0.3
+  firebase_ml_vision: ^0.9.4
+  firebase_auth: ^0.16.1
+  camera: ^0.5.8+2
+  path_provider: ^1.6.11
+  video_player: ^0.10.11+1
+  camera_camera: ^1.0.34+1
 
 
 
@@ -56,22 +62,28 @@ flutter:
   fonts:
     - family: Orbitron-variable
       fonts:
-        - asset: fonts/Orbitron-VariableFont_wght.ttf
+      - asset: fonts/Orbitron-VariableFont_wght.ttf
+
     - family: Orbitron-bold
       fonts:
         - asset: fonts/Orbitron-Bold.ttf
+
     - family: Orbitron-extrabold
       fonts:
         - asset: fonts/Orbitron-ExtraBold.ttf
+
     - family: Orbitron-medium
       fonts:
         - asset: fonts/Orbitron-Medium.ttf
+
     - family: Orbitron-regular
       fonts:
         - asset: fonts/Orbitron-Regular.ttf
+
     - family: Orbitron-semibold
       fonts:
         - asset: fonts/Orbitron-SemiBold.ttf
+        
     - family: Orbitron-black
       fonts:
         - asset: fonts/Orbitron-Black.ttf
