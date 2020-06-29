@@ -1,4 +1,7 @@
 import 'dart:io';
+
+import 'package:codiv_2078/screens/arcore.dart';
+import 'package:codiv_2078/screens/arcore2.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:codiv_2078/components/side_buttons.dart';
@@ -56,6 +59,7 @@ class LandingScreen extends StatelessWidget {
             children: <Widget>[
               SideButtons(
                 height: 150,
+
                 leftFunction: () async {
                   val = await showDialog(
                       context: context,
@@ -128,6 +132,8 @@ class LandingScreen extends StatelessWidget {
                           builder: (context) => ObjectDetection(
                                 file: val,
                               )));
+
+
                 },
 //                leftFunction: () {
 //                  print('left pressed');
@@ -138,6 +144,7 @@ class LandingScreen extends StatelessWidget {
 //                },
                 rightFunction: () {
                   print('right pressed');
+                  Navigator.pushNamed(context, RemoteObject.id);
                 },
               ),
               SizedBox(
