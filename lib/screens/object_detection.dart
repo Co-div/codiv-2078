@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:flutter/material.dart';
+import 'package:codiv_2078/constants.dart';
 
 class ObjectDetection extends StatelessWidget {
   ObjectDetection({
@@ -35,11 +36,82 @@ class ObjectDetection extends StatelessWidget {
     print('atleast got here3');
 
     return Container(
-        child: file != null
-            ? Image.file(
-                file,
-                fit: BoxFit.contain,
-              )
-            : Text("Tire a foto"));
+      child: file != null
+          ? SafeArea(
+              child: Scaffold(
+                backgroundColor: Colors.black,
+                body: ListView(
+                  // crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Image.file(
+                        file,
+                        fit: BoxFit.fill,
+                        // width: double.infinity
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: Text(
+                          'Detected a Smartphone',
+                          style: kImageTextStyle
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0xFFFF2A6D),
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                              bottomRight: Radius.circular(30)),
+                          // color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.0),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        padding: EdgeInsets.all(8),
+                        child: Text(
+                          'Holocube uses state-of-the-art technology. Now you can carry your workstation everywhere using this tiny powerhouse combining extreme computing capabilities and a holographic system.',
+                          style: kImageTextStyle,
+                        ),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Color(0xFFFF2A6D),
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30),
+                              topRight: Radius.circular(30),
+                              bottomRight: Radius.circular(30)),
+                          // color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10.0),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5.0),
+                      child: Container(
+                        alignment: Alignment.bottomLeft,
+                        padding: EdgeInsets.all(8),
+                        child: Image(
+                          image: AssetImage('assets/clippy.png'),
+                          height: 70.0,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : Text("Tire a foto"),
+    );
   }
 }

@@ -60,22 +60,28 @@ flutter:
   fonts:
     - family: Orbitron-variable
       fonts:
-        - asset: fonts/Orbitron-VariableFont_wght.ttf
+      - asset: fonts/Orbitron-VariableFont_wght.ttf
+
     - family: Orbitron-bold
       fonts:
         - asset: fonts/Orbitron-Bold.ttf
+
     - family: Orbitron-extrabold
       fonts:
         - asset: fonts/Orbitron-ExtraBold.ttf
+
     - family: Orbitron-medium
       fonts:
         - asset: fonts/Orbitron-Medium.ttf
+
     - family: Orbitron-regular
       fonts:
         - asset: fonts/Orbitron-Regular.ttf
+
     - family: Orbitron-semibold
       fonts:
         - asset: fonts/Orbitron-SemiBold.ttf
+        
     - family: Orbitron-black
       fonts:
         - asset: fonts/Orbitron-Black.ttf
