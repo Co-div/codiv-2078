@@ -1,14 +1,54 @@
 import 'package:codiv_2078/components/item_card.dart';
+import 'package:codiv_2078/components/parts.dart';
 import 'package:flutter/material.dart';
 
-class StorePage extends StatelessWidget {
+class StorePage extends StatefulWidget {
   static const String id = 'store-page';
+
+  @override
+  _StorePageState createState() => _StorePageState();
+}
+
+class _StorePageState extends State<StorePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('Store'),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Text(
+              'Store',
+              style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+                  fontSize: 30.0,
+                  fontFamily: "Orbitron-bold",
+                  fontStyle: FontStyle.italic),
+            ),
+            Row(
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/Currency.jpg'),
+                  height: 20,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  getMoney().toString(),
+                  style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+                      fontSize: 25.0,
+                      fontFamily: "Orbitron-bold",
+                      fontStyle: FontStyle.italic),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
       backgroundColor: Colors.black,
       body: ListView(

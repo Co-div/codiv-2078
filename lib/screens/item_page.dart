@@ -1,28 +1,62 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:codiv_2078/components/parts.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
+import 'landing_screen.dart';
 
-class ItemPage extends StatelessWidget {
+class ItemPage extends StatefulWidget {
   static const String id = 'item-page';
   ItemPage({this.image, this.title, this.coins, this.desc});
   final String image;
   final String title;
   final int coins;
   final String desc;
+
+  @override
+  _ItemPageState createState() => _ItemPageState();
+}
+
+class _ItemPageState extends State<ItemPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Something'),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image(
+                image: AssetImage('assets/Currency.jpg'),
+                height: 20,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                '$money',
+                style: TextStyle(
+//                      color: Colors.black,
+//                      backgroundColor: Colors.,
+                    fontSize: 25.0,
+                    fontFamily: "Orbitron-bold",
+                    fontStyle: FontStyle.italic),
+              ),
+              SizedBox(
+                width: 50,
+              ),
+            ],
+          ),
+          backgroundColor: Colors.black,
         ),
         backgroundColor: Color(0xFF120458),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(18.0),
           child: Column(
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: Image(
-                  image: AssetImage(image),
+                  image: AssetImage(widget.image),
                 ),
               ),
               Column(
@@ -34,7 +68,7 @@ class ItemPage extends StatelessWidget {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(title,
+                      child: Text(widget.title,
                           style: TextStyle(
                             fontSize: 30.0,
                             fontFamily: "Orbitron-bold",
@@ -63,7 +97,7 @@ class ItemPage extends StatelessWidget {
                                 width: 10,
                               ),
                               Text(
-                                coins.toString(),
+                                widget.coins.toString(),
                                 style: TextStyle(
 //                      color: Colors.black,
 //                      backgroundColor: Colors.,
@@ -84,7 +118,37 @@ class ItemPage extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              setState(() {
+                                money -= widget.coins;
+                              });
+                              Alert(
+                                context: context,
+                                style: alertStyle,
+                                type: AlertType.success,
+                                title: "RFLUTTER ALERT",
+                                desc:
+                                    "Flutter is more awesome with RFlutter Alert.",
+                                buttons: [
+                                  DialogButton(
+                                    child: Text(
+                                      "COOL",
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 20),
+                                    ),
+                                    onPressed: () {
+//                                      Navigator.popUntil(
+//                                          context, LandingScreen.id);
+                                      Navigator.popUntil(
+                                          context,
+                                          ModalRoute.withName(
+                                              Navigator.defaultRouteName));
+                                    },
+                                    width: 120,
+                                  )
+                                ],
+                              ).show();
+                            },
                             child: Text(
                               'Buy ',
                               style: TextStyle(
@@ -107,7 +171,21 @@ class ItemPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10.0),
-              Text(desc)
+              Expanded(
+                  child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        color: Colors.purple,
+                      ),
+                      padding: EdgeInsets.all(30),
+//                      color: Colors.purple,
+                      child: Text(
+                        widget.desc,
+                        style: TextStyle(
+                            fontSize: 25.0,
+                            fontFamily: "Orbitron-bold",
+                            fontStyle: FontStyle.italic),
+                      )))
             ],
           ),
         ),
