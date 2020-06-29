@@ -12,8 +12,8 @@ A new Flutter application.
 ## Screenshots
 _                          |       _
 :-------------------------:|:-------------------------:
-<img src="Screenshots/Alexa.jpeg" width=300 height=300 style="object-fit: cover;">  |  <img src="Screenshots/Alexa_detected.jpeg" width=300 height=600>
-<img src="Screenshots/retro_monitor.jpg" width=300 height=400 style="object-fit: cover;">  |  <img src="Screenshots/retro_monitor_detected.jpeg" width=300 height=600>
+<img src="Screenshots/Alexa.jpeg" width=300 height=300 style="object-fit: cover;">  |  <img src="Screenshots/Alexa_detected_new.jpeg" width=300 height=600>
+<img src="Screenshots/retro_monitor.jpg" width=300 height=400 style="object-fit: cover;">  |  <img src="Screenshots/retro_monitor_detected_new.jpeg" width=300 height=600>
 ## Lore
 
 ### Virtual Assistant [ Freya ]
