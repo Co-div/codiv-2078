@@ -8,7 +8,10 @@ import 'package:camera_camera/camera_camera.dart';
 
 File val;
 
+import 'store_page.dart';
+
 class LandingScreen extends StatelessWidget {
+  static const String id = 'landing-screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,6 +151,7 @@ class LandingScreen extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     print('shopping cart pressed');
+                    Navigator.pushNamed(context, StorePage.id);
                   },
                   child: Container(
                     child: Icon(
