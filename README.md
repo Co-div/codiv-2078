@@ -1,6 +1,6 @@
 # CODIV_2078
 
-A new Flutter application.
+CODIV-2078 is an app made for the Flutter Hackathon under the CyberPunk theme. The app features an object detection scavenger adventure supported by a CyberPunk Lore which allows the user to gather points useful for purchasing merchandise for their avatar. These merchandises provide the user's avatar with improved stats which can be used as an advantage in the Augmented Battle Arena featured in the app where users can fight with monsters and level up hence unlocking the ability to scan more new objects.
 
 <div style="text-align:center">
   <p align="center">
