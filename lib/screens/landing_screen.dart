@@ -10,6 +10,7 @@ import 'package:camera_camera/camera_camera.dart';
 import 'store_page.dart';
 
 File val;
+
 class LandingScreen extends StatelessWidget {
   static const String id = 'landing-screen';
   @override
@@ -126,14 +127,14 @@ class LandingScreen extends StatelessWidget {
                               ],
                             ),
                           ));
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => ObjectDetection(
-                                file: val,
-                              )));
-
-
+                  if (val != null) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ObjectDetection(
+                                  file: val,
+                                )));
+                  }
                 },
 //                leftFunction: () {
 //                  print('left pressed');

@@ -16,12 +16,43 @@ class _RemoteObjectState extends State<RemoteObject> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Custom Object on plane detected'),
-        ),
-        body: ArCoreView(
-          onArCoreViewCreated: _onArCoreViewCreated,
-          enableTapRecognizer: true,
+//        appBar: AppBar(
+//          title: const Text('Custom Object on plane detected'),
+//        ),
+        body: Stack(
+          children: <Widget>[
+            ArCoreView(
+              onArCoreViewCreated: _onArCoreViewCreated,
+              enableTapRecognizer: true,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Image(
+                  image: AssetImage('assets/hud2.png'),
+                ),
+                Image(
+                  image: AssetImage('assets/hud1.png'),
+                  height: 250,
+                ),
+                Container(
+                  padding: EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    color: Color(0xFFFF184C),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Attack',
+                        style: TextStyle(
+                          fontSize: 25.0,
+                          fontFamily: "Orbitron-bold",
+                        )),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
